@@ -1,17 +1,17 @@
+/* Definições globais */
 :root {
-
-  --primary-color: #2D3250;      /* Azul Escuro */
-  --secondary-color: #F75B39;    /* Laranja Vibrante */
-  --accent-color: #FFC107;       /* Amarelo para detalhes */
-  --background-color: #F8F9FA;   /* Cinza Muito Claro (fundo principal) */
-  --surface-color: #FFFFFF;      /* Branco (cards, superfícies elevadas) */
-  --text-color-primary: #212529; /* Preto Suave (texto principal) */
-  --text-color-secondary: #6C757D;/* Cinza (texto secundário) */
-  --border-color: #DEE2E6;       /* Cinza Claro (bordas) */
-  --heading-color: var(--primary-color); /* Títulos com a cor primária */
+  --primary-color: #2D3250;
+  --secondary-color: #F75B39;
+  --accent-color: #FFC107;
+  --background-color: #F8F9FA;
+  --surface-color: #FFFFFF;
+  --text-color-primary: #212529;
+  --text-color-secondary: #6C757D;
+  --border-color: #DEE2E6;
+  --heading-color: var(--primary-color);
 
   --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-  --gradient-button: linear-gradient(90deg, var(--secondary-color), #E67E22 ); /* Laranja para um tom mais escuro de laranja */
+  --gradient-button: linear-gradient(90deg, var(--secondary-color), #E67E22 );
 
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.075);
   --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -19,11 +19,17 @@
 
   --border-radius-sm: 4px;
   --border-radius-md: 8px;
-  --border-radius-lg: 12px; /* Um pouco menor que antes */
+  --border-radius-lg: 12px;
 
-  /* Fontes Originais Revertidas */
   --font-primary: 'Manrope', sans-serif;
   --font-secondary: 'Inter', sans-serif;
+  --font-tertiary: 'Montserrat', sans-serif;
+  --font-quaternary: 'Playfair Display', serif;
+  --font-quinary: 'Sora', sans-serif;
+  --font-senary: 'Spectral', serif;
+  --font-septenary: 'Work Sans', sans-serif;
+  --font-octonary: 'Poppins', serif;
+  --font-nonary: 'Lora', serif;
 
   --transition-fast: all 0.2s ease-in-out;
   --transition-normal: all 0.3s ease-in-out;
@@ -38,7 +44,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 100%; /* 16px */
+  font-size: 100%;
 }
 
 body {
@@ -56,7 +62,6 @@ body {
   padding: 2rem 1.5rem;
 }
 
-/* Typography */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-secondary);
   font-weight: 700;
@@ -67,24 +72,24 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: clamp(2.6rem, 5.5vw, 3.6rem);
-  font-weight: 800; /* Mais peso para Inter */
+  font-weight: 800;
   letter-spacing: -0.5px;
 }
 
 h2 {
   font-size: clamp(2rem, 4.5vw, 2.8rem);
-  color: var(--primary-color); /* H2 também com cor primária, destaque com tamanho */
+  color: var(--primary-color);
 }
 
 h3 {
   font-size: clamp(1.5rem, 3.5vw, 2rem);
-  color: var(--secondary-color); /* H3 com cor secundária */
+  color: var(--secondary-color);
 }
 
 p {
   margin-bottom: 1.25rem;
   color: var(--text-color-secondary);
-  font-size: 1.05rem; /* Levemente aumentado para Manrope */
+  font-size: 1.05rem;
 }
 
 a {
@@ -99,24 +104,34 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Global Header Style */
 .global-header {
   text-align: center;
   padding: 3rem 1rem;
-  /* background: var(--gradient-primary); */ /* Gradiente removido do header para um look mais clean com fundo claro */
-  background-color: var(--surface-color); /* Header com fundo branco */
-  border-bottom: 1px solid var(--border-color);
+  background-color: var(--primary-color);
   margin-bottom: 3rem;
   box-shadow: var(--shadow-sm);
 }
 
 .global-header h1 {
-  color: var(--primary-color);
-  font-size: clamp(2.8rem, 6vw, 4rem);
-  /* text-shadow: 1px 1px 2px rgba(0,0,0,0.1); */ /* Sombra sutil */
+  color: var(--surface-color);
+  font-family: var(--font-tertiary);
+  font-weight: 800;
+  font-size: clamp(3.6rem, 8vw, 5.5rem);
+  letter-spacing: 0.025em;
+  margin-bottom: 0.5rem;
 }
 
-/* Global Footer Style */
+.global-header h2 {
+  font-family: var(--font-nonary);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 200;
+  font-style: italic;
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
 .global-footer {
   text-align: center;
   margin-top: 4rem;
@@ -135,11 +150,10 @@ a:hover {
   font-weight: 600;
 }
 
-/* Common Button Style */
 .btn {
   display: inline-block;
-  padding: 0.85rem 2rem; /* Ajustado */
-  font-family: var(--font-secondary); /* Inter para botões */
+  padding: 0.85rem 2rem;
+  font-family: var(--font-secondary);
   font-size: 1rem;
   font-weight: 600;
   text-align: center;
@@ -148,13 +162,13 @@ a:hover {
   transition: var(--transition-normal);
   text-decoration: none;
   box-shadow: var(--shadow-sm);
-  border: 2px solid transparent; /* Borda transparente para consistência */
+  border: 2px solid transparent;
 }
 
 .btn-primary {
   background: var(--gradient-button);
   color: var(--surface-color);
-  border-color: var(--secondary-color); /* Borda sutil no tom do gradiente */
+  border-color: var(--secondary-color);
 }
 
 .btn-primary:hover {
@@ -179,7 +193,6 @@ a:hover {
   text-decoration: none;
 }
 
-/* Card Style */
 .card {
   background-color: var(--surface-color);
   padding: 2.5rem;
@@ -207,7 +220,6 @@ a:hover {
   background: var(--gradient-primary);
 }
 
-/* Form Elements */
 select,
 input[type="text"],
 input[type="email"],
@@ -223,17 +235,15 @@ textarea {
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
-
 select:focus,
 input[type="text"]:focus,
 input[type="email"]:focus,
 textarea:focus {
   outline: none;
   border-color: var(--secondary-color);
-  box-shadow: 0 0 0 3px rgba(247, 91, 57, 0.15); /* Laranja com opacidade */
+  box-shadow: 0 0 0 3px rgba(247, 91, 57, 0.15);
 }
 
-/* Animations */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -249,13 +259,12 @@ textarea:focus {
   50% { opacity: 1; transform: scale(1.03); }
 }
 
-/* Utility Classes */
 .text-center { text-align: center; }
 .mt-1 { margin-top: 1rem; }
 .mt-2 { margin-top: 2rem; }
 .mb-1 { margin-bottom: 1rem; }
 .mb-2 { margin-bottom: 2rem; }
-.sr-only { /* For screen readers */
+.sr-only {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -267,7 +276,6 @@ textarea:focus {
   border-width: 0;
 }
 
-/* Responsive Adjustments */
 @media (max-width: 768px) {
   body {
     font-size: 95%;

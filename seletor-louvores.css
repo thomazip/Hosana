@@ -1,62 +1,59 @@
 /* Importando as variáveis e estilos base */
 @import url('../style.css');
 
-/* Container do seletor de louvores */
 .louvores-container {
   animation: fadeInUp 0.6s ease-out;
 }
 
 .seletor-card {
-  /* Estilo .card já aplicado globalmente */
   text-align: center;
 }
 
 .seletor-card h2 {
-  margin-bottom: 2rem; /* Aumentada a margem inferior */
+  margin-bottom: 2rem;
   font-size: 1.8rem;
 }
 
 #seletor-louvores {
-  /* Estilos de select já definidos globalmente */
   max-width: 450px;
-  margin: 0 auto 1.5rem auto; /* Centralizado e com margem inferior */
+  margin: 0 auto 1.5rem auto;
   display: block;
   font-size: 1.1rem;
   padding: 0.9rem 1.2rem;
 }
 
-/* Botão de selecionar específico */
 #botao-selecionar {
-  /* Estilo .btn e .btn-primary já aplicados via HTML */
-  display: block; /* Para permitir margem auto e ocupar largura definida pelo padding */
-  margin: 1rem auto 2rem auto; /* Centralizado e com margem superior/inferior */
+  display: block;
+  margin: 1rem auto 2rem auto;
   padding: 0.9rem 2rem;
   font-size: 1.1rem;
-  max-width: 300px; /* Definindo uma largura máxima para o botão */
+  max-width: 300px;
 }
 
 /* Player de áudio */
 #player {
   width: 100%;
-  max-width: 450px; /* Ajustado para alinhar melhor com o seletor e botão */
-  margin: 0 auto 2rem auto; /* Margem superior removida para controlar pelo botão, margem inferior adicionada */
-  border-radius: var(--border-radius-md);
-  background-color: var(--surface-color);
-  box-shadow: var(--shadow-lg);
-  padding: 1.2rem;
-  transition: var(--transition-normal);
+  max-width: 450px;
+  margin: 0 auto 2rem auto;
 }
+  /* removido para deixar o player nativo*/
 
-#player:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
-}
+  /* border-radius: var(--border-radius-md); */
+  /* background-color: var(--surface-color); */
+  /* box-shadow: var(--shadow-lg); */
+  /* padding: 1.2rem; */
+  /* transition: var(--transition-normal); */
 
-/* Letra da música */
+
+/* #player:hover {
+  /* transform: translateY(-4px); */
+  /* box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12); } */
+
+
 #letra-musica {
-  font-family: var(--font-primary);
+  font-family: var(--font-nonary);
   white-space: pre-wrap;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   color: var(--text-color-primary);
   text-align: center;
   max-height: 500px;
@@ -90,7 +87,6 @@
   background: var(--primary-color);
 }
 
-/* Navegação para outra página */
 .navegacao-secao {
   margin-top: 3rem;
   padding: 1.5rem;
@@ -110,7 +106,7 @@
   font-weight: 600;
 }
 
-/* Responsividade específica */
+
 @media (max-width: 768px) {
   .seletor-card h2 {
     font-size: 1.6rem;
@@ -123,13 +119,13 @@
   #botao-selecionar {
     padding: 0.8rem 1.8rem;
     font-size: 1rem;
-    max-width: 280px; /* Ajuste responsivo */
+    max-width: 280px;
   }
 
   #player {
-    margin: 0 auto 1.5rem auto; /* Ajustado margem */
+    margin: 0 auto 1.5rem auto;
     padding: 1rem;
-    max-width: 90%; /* Ajuste responsivo */
+    max-width: 90%;
   }
 
   #letra-musica {
