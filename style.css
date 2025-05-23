@@ -1,0 +1,305 @@
+:root {
+
+  --primary-color: #2D3250;      /* Azul Escuro */
+  --secondary-color: #F75B39;    /* Laranja Vibrante */
+  --accent-color: #FFC107;       /* Amarelo para detalhes */
+  --background-color: #F8F9FA;   /* Cinza Muito Claro (fundo principal) */
+  --surface-color: #FFFFFF;      /* Branco (cards, superfícies elevadas) */
+  --text-color-primary: #212529; /* Preto Suave (texto principal) */
+  --text-color-secondary: #6C757D;/* Cinza (texto secundário) */
+  --border-color: #DEE2E6;       /* Cinza Claro (bordas) */
+  --heading-color: var(--primary-color); /* Títulos com a cor primária */
+
+  --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  --gradient-button: linear-gradient(90deg, var(--secondary-color), #E67E22 ); /* Laranja para um tom mais escuro de laranja */
+
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.075);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 20px rgba(0,0,0,0.12);
+
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px; /* Um pouco menor que antes */
+
+  /* Fontes Originais Revertidas */
+  --font-primary: 'Manrope', sans-serif;
+  --font-secondary: 'Inter', sans-serif;
+
+  --transition-fast: all 0.2s ease-in-out;
+  --transition-normal: all 0.3s ease-in-out;
+  --transition-slow: all 0.5s ease-in-out;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 100%; /* 16px */
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--background-color);
+  color: var(--text-color-primary);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.main-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-secondary);
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 1.25rem;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: clamp(2.6rem, 5.5vw, 3.6rem);
+  font-weight: 800; /* Mais peso para Inter */
+  letter-spacing: -0.5px;
+}
+
+h2 {
+  font-size: clamp(2rem, 4.5vw, 2.8rem);
+  color: var(--primary-color); /* H2 também com cor primária, destaque com tamanho */
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  color: var(--secondary-color); /* H3 com cor secundária */
+}
+
+p {
+  margin-bottom: 1.25rem;
+  color: var(--text-color-secondary);
+  font-size: 1.05rem; /* Levemente aumentado para Manrope */
+}
+
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: var(--transition-fast);
+  font-weight: 500;
+}
+
+a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+/* Global Header Style */
+.global-header {
+  text-align: center;
+  padding: 3rem 1rem;
+  /* background: var(--gradient-primary); */ /* Gradiente removido do header para um look mais clean com fundo claro */
+  background-color: var(--surface-color); /* Header com fundo branco */
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 3rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.global-header h1 {
+  color: var(--primary-color);
+  font-size: clamp(2.8rem, 6vw, 4rem);
+  /* text-shadow: 1px 1px 2px rgba(0,0,0,0.1); */ /* Sombra sutil */
+}
+
+/* Global Footer Style */
+.global-footer {
+  text-align: center;
+  margin-top: 4rem;
+  padding: 2.5rem 1rem;
+  background-color: var(--surface-color);
+  border-top: 1px solid var(--border-color);
+  font-size: 0.95rem;
+  color: var(--text-color-secondary);
+}
+
+.global-footer p {
+  margin-bottom: 0.5rem;
+}
+
+.global-footer a {
+  font-weight: 600;
+}
+
+/* Common Button Style */
+.btn {
+  display: inline-block;
+  padding: 0.85rem 2rem; /* Ajustado */
+  font-family: var(--font-secondary); /* Inter para botões */
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  border-radius: var(--border-radius-md);
+  transition: var(--transition-normal);
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+  border: 2px solid transparent; /* Borda transparente para consistência */
+}
+
+.btn-primary {
+  background: var(--gradient-button);
+  color: var(--surface-color);
+  border-color: var(--secondary-color); /* Borda sutil no tom do gradiente */
+}
+
+.btn-primary:hover {
+  color: var(--surface-color);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  filter: brightness(1.1);
+  text-decoration: none;
+}
+
+.btn-secondary {
+  background-color: var(--surface-color);
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-color);
+  color: var(--surface-color);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  text-decoration: none;
+}
+
+/* Card Style */
+.card {
+  background-color: var(--surface-color);
+  padding: 2.5rem;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  margin-bottom: 2.5rem;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid var(--border-color);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-header-accent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: var(--gradient-primary);
+}
+
+/* Form Elements */
+select,
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  font-size: 1rem;
+  font-family: var(--font-primary);
+  background-color: var(--surface-color);
+  color: var(--text-color-primary);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+
+select:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(247, 91, 57, 0.15); /* Laranja com opacidade */
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.03); }
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+.sr-only { /* For screen readers */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  body {
+    font-size: 95%;
+  }
+  .main-container {
+    padding: 1.5rem 1rem;
+  }
+  h1 {
+    font-size: clamp(2.2rem, 5vw, 3rem);
+  }
+  h2 {
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+  }
+  .global-header {
+    padding: 2.5rem 1rem;
+    margin-bottom: 2.5rem;
+  }
+  .global-header h1 {
+     font-size: clamp(2.4rem, 5.5vw, 3.2rem);
+  }
+  .card {
+    padding: 2rem;
+  }
+  .btn {
+    padding: 0.8rem 1.8rem;
+    font-size: 0.95rem;
+  }
+  select,
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    padding: 0.8rem 1rem;
+    font-size: 0.95rem;
+  }
+}

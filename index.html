@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seletor de Louvores</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="seletor-louvores/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="global-header">
+    <h1>Seletor de Louvores</h1>
+  </header>
+
+  <main class="main-container louvores-container">
+    <section class="card seletor-card card-header-accent">
+      <h2>Escolha seu louvor preferido:</h2>
+
+      <select id="seletor-louvores" aria-label="Selecione um louvor">
+        <option value="" disabled selected>Selecione uma música</option>
+        <option value="1">Bênçãos que não tem fim</option>
+        <option value="2">Liberta-me de mim</option>
+        <option value="3">Todavia me alegrarei</option>
+      </select>
+
+      <button id="botao-selecionar" class="btn btn-primary">Ouvir e Ler Letra</button>
+
+      <audio id="player" controls>
+        Seu navegador não suporta o elemento de áudio.
+      </audio>
+
+      <div id="letra-musica" aria-live="polite">
+      </div>
+    </section>
+
+    <section class="navegacao-secao text-center">
+      <p>Descubra também nosso <a href="./gerador-versiculos/index.html">Gerador de Versículos</a>!</p>
+    </section>
+  </main>
+
+  <footer class="global-footer">
+
+    <p>Desenvolvido com por <a href="https://github.com/thomazip" target="_blank" rel="noopener noreferrer">Fernando Thomaz</a> &copy; 2025</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

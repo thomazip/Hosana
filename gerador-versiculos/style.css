@@ -1,0 +1,159 @@
+/* Importando as variáveis e estilos base */
+@import url('../style.css');
+
+/* Container do gerador de versículos */
+.versiculos-container {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.versiculo-card {
+  text-align: center;
+}
+
+.versiculo-card h2 {
+  margin-bottom: 1.5rem; /* Reduzida a margem para dar mais espaço ao versículo */
+  font-size: 2rem; /* Aumentado um pouco */
+  color: var(--primary-color);
+}
+
+/* Wrapper do conteúdo do versículo (onde o script injeta) */
+#dailyVersesWrapper {
+  min-height: 150px; /* Altura mínima para estado de carregamento */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  padding: 0.5rem; /* Pequeno padding interno */
+  width: 100%;
+}
+
+/* Estilo para o TEXTO do versículo (citação) */
+.bibleVerse {
+  font-family: var(--font-primary); /* Manrope, como definido no global */
+  font-size: 1.7rem; /* Tamanho bom para leitura */
+  color: var(--text-color-primary);
+  line-height: 1.7;
+  font-style: italic;
+  position: relative;
+  padding: 1rem 1.5rem 1rem 2.5rem; /* Padding: C R B E (Mais à esquerda para a barra) */
+  margin: 1rem auto 0.5rem auto; /* Margem para centralizar e separar da referência */
+  background-color: var(--surface-color);
+  border-left: 5px solid var(--secondary-color); /* Barra lateral laranja */
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--shadow-sm);
+  max-width: 90%; /* Para não ocupar a largura toda em telas grandes */
+  text-align: left;
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Opcional: Aspas decorativas para a citação */
+.bibleVerse::before {
+  content: '\201C'; /* Aspa dupla esquerda HTML entity */
+  font-family: 'Georgia', serif; /* Fonte serifada para aspas */
+  font-size: 3rem;
+  color: var(--secondary-color);
+  opacity: 0.5;
+  position: absolute;
+  left: 0.6rem;
+  top: 0.3rem;
+  line-height: 1;
+}
+
+/* Estilo para a REFERÊNCIA do versículo (Livro Cap:Ver) */
+.verseReference {
+  font-family: var(--font-secondary); /* Inter, para diferenciar */
+  font-size: 1rem; /* Menor e mais discreto */
+  color: var(--text-color-secondary);
+  font-style: normal; /* Sem itálico */
+  margin-top: 0.75rem; /* Espaço entre versículo e referência */
+  font-weight: 500;
+  text-align: right;
+  width: 100%;
+  max-width: 90%; /* Alinhado com .bibleVerse */
+  padding-right: 0.5rem; /* Pequeno padding para não colar na borda */
+  animation: fadeIn 0.5s ease-out 0.2s; /* Delay na animação */
+  opacity: 0; /* Começa invisível para o delay da animação */
+  animation-fill-mode: forwards; /* Mantém o estado final da animação */
+}
+
+/* Mensagens de carregamento e erro */
+.loading-message,
+.error-message {
+  font-family: var(--font-secondary);
+  color: var(--text-color-secondary);
+  font-size: 1.1rem;
+  padding: 2rem;
+}
+
+.error-message {
+  color: var(--secondary-color); /* Destaque para erro */
+  font-weight: 500;
+}
+
+/* Botão de gerar */
+#gerarVersiculo {
+  margin-top: 1.5rem;
+  padding: 0.9rem 2rem;
+  font-size: 1.1rem;
+  /* Outros estilos de .btn e .btn-primary já são aplicados */
+}
+
+#gerarVersiculo.loading {
+  animation: pulse 1.2s infinite ease-in-out;
+  /* Estilo de loading do botão é melhor controlado pela classe .btn:disabled se desejado, ou aqui */
+}
+
+/* Navegação para outra página */
+.navegacao-secao {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background-color: var(--surface-color);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+}
+
+.navegacao-secao p {
+  font-size: 1.1rem;
+  color: var(--text-color-secondary);
+  margin-bottom: 0;
+}
+
+.navegacao-secao a {
+  font-weight: 600;
+}
+
+/* Responsividade específica */
+@media (max-width: 768px) {
+  .versiculo-card h2 {
+    font-size: 1.7rem;
+  }
+
+  .bibleVerse {
+    font-size: 1.4rem;
+    padding: 0.8rem 1rem 0.8rem 2rem;
+    max-width: 95%;
+  }
+  .bibleVerse::before {
+    font-size: 2.5rem;
+    left: 0.4rem;
+    top: 0.1rem;
+  }
+
+  .verseReference {
+    font-size: 0.9rem;
+    max-width: 95%;
+  }
+
+  #gerarVersiculo {
+    padding: 0.8rem 1.8rem;
+    font-size: 1rem;
+  }
+
+  .loading-message,
+  .error-message {
+    font-size: 1rem;
+    padding: 1.5rem;
+  }
+}
