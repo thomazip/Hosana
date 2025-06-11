@@ -239,9 +239,9 @@ Eu me alegro em Ti, Senhor`
     "3": "Leandro Soares"
   },
   audio: {
-    "1": "musicas/bencaos-sem-fim.mp3",
-    "2": "musicas/liberta-me-de-mim.mp3",
-    "3": "musicas/todavia-me-alegrarei.mp3"
+    "1": "files/bencaos-sem-fim.mp3",
+    "2": "files/liberta-me-de-mim.mp3",
+    "3": "files/todavia-me-alegrarei.mp3"
   }
 }
 
